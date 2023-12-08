@@ -1,0 +1,85 @@
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="search">
+                <mat-tab-group>
+                    <mat-tab label="Task" class="tabs">
+                        <div class="data">
+                            <div class="taskcreate">
+                                <input type="text" class="searchdata" placeholder="Search" [(ngModel)]="data"
+                                    (keyup)="search()" />
+                                <mat-icon aria-hidden="true" class="icon" ion-input aria-label="Example home icon"
+                                    fontIcon="search"></mat-icon>
+                                <div>
+                                    <button type="submit" (click)="createTask()" class="btn btn-primary">
+                                        <b> + </b> Add task
+                                    </button>
+                                </div>
+                            </div>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>name</th>
+                                        <th>Description</th>
+                                        <th>Created on</th>
+                                        <th>Status</th>
+                                        <th>Priority</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of filterData">
+                                        <td>
+                                            <mat-checkbox [disabled]="item.status === 'complete'"
+                                                [checked]=" (item.status ==='complete')  "
+                                                (change)="finishTask($event,item.id)"
+                                                id="item.id">
+                                            </mat-checkbox>
+                                        </td>
+                                        <td>{{ item.name }}</td>
+                                        <td>{{ item.description }}</td>
+                                        <td>{{ item.createdOn | date }}</td>
+                                        <td>{{ item.status }}</td>
+                                        <td>{{ item.priority }}</td>
+                                        <td>
+                                            <span>
+                                                <mat-icon aria-hidden="false" class="btns" type="button"
+                                                    aria-label="Example home icon" (click)="edit(item.id)"
+                                                    fontIcon="edit"></mat-icon></span>
+                                            <span>
+                                                <mat-icon aria-hidden="false" class="btns" type="button"
+                                                    aria-label="Example home icon" (click)="delete(item.id)"
+                                                    fontIcon="delete"></mat-icon></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Completed task" class="tabs">
+                        <div class="head">
+                            <table class="head">
+                                <thead>
+                                    <tr>
+                                        <th>Task</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of finishedTask">
+                                        <td>{{ item.name }}</td>
+                                        <td>{{ item.description }}</td>
+                                        <td>{{ item.status }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,83 @@
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+h4 {
+    margin: 20px;
+    margin-bottom: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.X {
+    margin: 20px;
+    background:#e9ecef;
+    width: 35px;
+    height: 30px;
+    padding-top: 4px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.input-field {
+    width: 350px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid gainsboro;
+    padding: 10px;
+    border-width: thin;
+    margin-left: 15px;
+    font-size: 15px;
+
+}
+
+label {
+    width: 150px;
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.radio {
+    margin-bottom: 10px;
+    margin-left: -70px;
+}
+
+.prio {
+    margin-right: 80px;
+    margin-bottom: 50px;
+}
+
+.btn {
+    margin-top: 20px;
+    display: block;
+    float: right;
+    margin-bottom: 30px;
+    margin: 15px;
+    color: white;
+    padding: 8px;
+    width: 150px;
+    background-color:#1a8fe3;
+    border-radius: 10px;
+}
+
+.btns {
+    background-color: gray;
+}
+
+.footer{   
+      padding-bottom: 72px;
+    background: #e9ecef;
+}
+p{
+    font-size: 12px;
+    position: absolute;
+    margin-left: 200px;
+    padding-top: 45px;
+    color: red; 
+}
+p.prio{
+    padding-bottom: 2px;
+}

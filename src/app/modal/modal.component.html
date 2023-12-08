@@ -1,0 +1,43 @@
+<form [formGroup]="modal" (ngSubmit)="addTask(modal.value)">
+    <div class="head">
+        <div>
+            <h4>Add Task To TodoList</h4>
+        </div>
+        <div class="X" mat-dialog-close>X</div>
+    </div>
+    <div class="space">
+        <div>
+            <p *ngIf="name && name.invalid && name.touched">Name is required</p>
+            <label for="Name">Task Name </label>
+            <input type="text" class="input-field" name="Name" placeholder="Task" formControlName="name" />
+
+        </div>
+        <div>
+            <p *ngIf="description && description.invalid && description.touched">Description is required</p>
+            <label for="description"> Task Description </label>
+            <input type="text" class="input-field" name="description"  placeholder="Description"
+                formControlName="description" />
+        </div>
+        <div>
+            <p *ngIf="date && date.invalid && date.touched">Date is required</p>
+            <label for="DeadlineDate">Deadline Date </label>
+            <input type="date"  class="input-field"  name="DeadlineDate" placeholder="DeadlineDate"
+                formControlName="date" min="{{todayDate | date:'yyyy-MM-dd'}}" />
+        </div>
+        <div>
+            <p *ngIf="priority && priority.invalid && priority.touched">Priority required</p>
+            <label for="priority" class="prio">Priority</label>
+            <input type="radio" class="radio" name="priority" value="High"
+                formControlName="priority" /><label>High</label>
+            <input type="radio" class="radio" name="priority" value="Medium"
+                formControlName="priority" /><label>Medium</label>
+            <input type="radio" class="radio" name="priority" value="Low"
+                formControlName="priority" /><label>Low</label>
+        </div>
+        <div class="footer">
+            <button *ngIf="!isdata" type="submit" class="btn" mat-button><b> + </b> Add task</button>
+            <button *ngIf="isdata" type="submit" class="btn" mat-button>Edit task</button>
+            <button type="button" class="btn btns btn-light" mat-dialog-close>Cancel</button>
+        </div>
+    </div>
+</form>

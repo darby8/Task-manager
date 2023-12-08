@@ -1,0 +1,86 @@
+
+
+<div class="row mx-0">
+    <div class="col-md-7 px-0 corosal">
+        <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[0]" alt="Random first slide" />
+                </div>
+                <div class="carousel-caption">
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[1]" alt="Random second slide" />
+                </div>
+                <div class="carousel-caption">
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[2]" alt="Random third slide" />
+                </div>
+                <div class="carousel-caption">
+                    <h3>Third slide label</h3>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+    <div class="col-12 col-md-5 px-0 d-flex justify-content-center align-items-center">
+        <form [formGroup]="login" (ngSubmit)="onSubmit()">
+            <div class="heading">
+                <h1>Welcome back</h1>
+                <p>Welcome back! Please enter your detail</p>
+            </div>
+            <div class="form_data">
+                <mat-icon aria-hidden="false" class="icon" ion-input aria-label="Example home icon"
+                    fontIcon="email"></mat-icon>
+                <span class="pipe"></span>
+                <input type="email" class="inputData" formArrayName="email" placeholder="Email"
+                    formControlName="email" />
+                    <div><span *ngIf="email && email.invalid && email.touched">Email in required</span></div>
+            </div>
+            <div class="form_data">
+                <mat-icon aria-hidden="false" class="icon" ion-input aria-label="Example home icon"
+                    fontIcon="lock"></mat-icon>
+                <a class="type-toggle" (click)="toggle()">
+                    <mat-icon aria-hidden="false" class="icons" ion-input aria-label="Example home icon"
+                    fontIcon="visibility" [hidden]="show"></mat-icon>
+                    <mat-icon aria-hidden="false" class="icons" ion-input aria-label="Example home icon"
+                    fontIcon="visibility_off" [hidden]="!show"></mat-icon>
+                    </a>
+
+                <span class="pipe"></span>
+                <input class="inputData"  [type]="show ? 'text' : 'password'" formControlName="password"
+                    placeholder="Password" />
+                    <div>  <span *ngIf="password && password.invalid && password.touched">Password in required</span>
+            <span *ngIf="isPassword">Password is wrong</span></div>
+            </div>
+          
+
+            <div class="extra">
+                <div>
+                    <input type="checkbox" id="Remember-me" style="margin: 5px" />
+                    <label for="Remember-me">Remember me</label>
+                </div>
+                <div><a href="#">Forget password</a></div>
+            </div>
+            <span *ngIf="!isPresent">Email not found! . Please signUp</span>
+            <div class="button">
+                <button type="submit" class="btn">Login</button>
+            </div>
+            <div>If you have an account</div>
+                <input type="button" class="btn" value="signup" routerLink="/signup" />
+                
+        </form>
+    </div>
+</div>
+

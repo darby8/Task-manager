@@ -1,0 +1,102 @@
+body{
+    background-color: #ced4da;
+}
+.container{  
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.dashboard{
+    width: 100%;
+   
+height: 700px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+
+h1{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+
+input{
+    position:absolute;
+    border-radius: 20px;
+    border-width: thin;
+    padding: 10px;
+    width:  auto;
+}
+button{
+    border-radius: 10px;
+    background-color: #1a8fe3;
+    border-width: thin;
+    padding: 10px;
+    width:  auto;
+}
+
+.icon{
+    position: absolute;
+    width: auto;
+    height: auto;
+    color: #ced4da;
+    border-radius: 3px;
+    font-size: 28px;
+    margin-top: 8px;
+    margin-left: 200px;
+    
+}
+table{
+    width: 100%;
+}
+td, th{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd ;
+    padding: 8px;
+}
+.searchdata{
+    position: sticky;
+    padding-right: 50px;
+    
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.taskcreate{
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: sticky;
+}
+.btns{
+    color: #4b4848;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    font-size: 22px;
+    width: auto;
+    border-radius: 3px;
+    margin: 5px;
+    display:inline-block ;
+   
+    background-color: #ced4da;
+}
+td,th{
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+.tables{
+   margin-bottom: 200px;
+}
+.head{
+padding-top: 50px;
+}

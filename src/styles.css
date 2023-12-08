@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+   height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+b{
+    margin-right: 5px;
+    font-size: large;
+}
